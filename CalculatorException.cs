@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StackCalculator
+namespace CalculatorStackGUI
 {
     class StackOverflowException : Exception
     {
