@@ -9,7 +9,7 @@ namespace CalculatorStackGUI
     {
         //int TOS = -1;
         private int max_element = 100;
-        private Complex[] array;
+        //private Complex[] array;
 
         public CalculatorStack()
         {
@@ -20,6 +20,8 @@ namespace CalculatorStackGUI
         {
             array = new Complex[max];
         }
+
+        public Complex[] InnerArray { get { return array;} }
 
         public void add()
         {

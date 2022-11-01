@@ -9,12 +9,13 @@ namespace CalculatorStackGUI
     {
         public int TOS = -1;
         private int max_element = 100;
-        private Complex[] array;
+        protected Complex[] array;
 
         public Stack()
         {
             array = new Complex[this.max_element];
         }
+        public int len() { return TOS+1; }
 
         public Stack(int max)
         {
@@ -89,7 +90,10 @@ namespace CalculatorStackGUI
             if(TOS > -1) {
                 for (int i = TOS; i >= 0; i--)
                 {
-                    str += array[i] + ", ";
+                    if (array[i] != 0)
+                    {
+                        str += array[i] + ", ";
+                    }
                 }
             }
             else
