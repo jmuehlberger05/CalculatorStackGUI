@@ -178,5 +178,37 @@ namespace CalculatorStackGUI
             }
             refresh();
         }
+
+        private void quad_Click(object sender, EventArgs e)
+        {
+            error_msg.Visible = false;
+            try
+            {
+                opStack.quad();
+                output.Text = "" + opStack.InnerArray[opStack.len() - 1];
+            }
+            catch (Exception ex)
+            {
+                error_msg.Visible = true;
+                error_msg.Text = ex.Message;
+            }
+            refresh();
+        }
+
+        private void konj_Click(object sender, EventArgs e)
+        {
+            error_msg.Visible = false;
+            try
+            {
+                opStack.konj();
+                output.Text = "" + opStack.InnerArray[opStack.len() - 1];
+            }
+            catch (Exception ex)
+            {
+                error_msg.Visible = true;
+                error_msg.Text = ex.Message;
+            }
+            refresh();
+        }
     }
 }

@@ -106,5 +106,31 @@ namespace CalculatorStackGUI
                 throw new CalculatorException();
             }
         }
+        public void quad()
+        {
+            if (TOS > -1)
+            {
+                Complex val = this.pop();
+                this.push(val*val);
+            }
+            else
+            {
+                throw new CalculatorException();
+            }
+        }
+
+        public void konj()
+        {
+            if (TOS > -1)
+            {
+                Complex val = this.pop();
+                Complex konj = new Complex(val.Real, val.Imaginary * -1);
+                this.push(konj);
+            }
+            else
+            {
+                throw new CalculatorException();
+            }
+        }
     }
 }
