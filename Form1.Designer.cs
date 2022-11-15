@@ -50,13 +50,14 @@ namespace CalculatorStackGUI
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.error_msg = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.quad = new System.Windows.Forms.Button();
+            this.konj = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.quad = new System.Windows.Forms.Button();
-            this.konj = new System.Windows.Forms.Button();
+            this.inv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.real)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imag)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,7 +100,7 @@ namespace CalculatorStackGUI
             this.real_label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.real_label.Location = new System.Drawing.Point(14, 13);
             this.real_label.Name = "real_label";
-            this.real_label.Size = new System.Drawing.Size(56, 19);
+            this.real_label.Size = new System.Drawing.Size(54, 18);
             this.real_label.TabIndex = 2;
             this.real_label.Text = "Realteil";
             // 
@@ -110,7 +111,7 @@ namespace CalculatorStackGUI
             this.imag_label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.imag_label.Location = new System.Drawing.Point(155, 13);
             this.imag_label.Name = "imag_label";
-            this.imag_label.Size = new System.Drawing.Size(81, 19);
+            this.imag_label.Size = new System.Drawing.Size(77, 18);
             this.imag_label.TabIndex = 4;
             this.imag_label.Text = "Imaginärteil";
             // 
@@ -212,9 +213,9 @@ namespace CalculatorStackGUI
             // pop
             // 
             this.pop.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pop.Location = new System.Drawing.Point(18, 178);
+            this.pop.Location = new System.Drawing.Point(110, 178);
             this.pop.Name = "pop";
-            this.pop.Size = new System.Drawing.Size(169, 29);
+            this.pop.Size = new System.Drawing.Size(77, 29);
             this.pop.TabIndex = 13;
             this.pop.Text = "Pop";
             this.pop.UseVisualStyleBackColor = true;
@@ -248,7 +249,7 @@ namespace CalculatorStackGUI
             this.output_label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.output_label.Location = new System.Drawing.Point(18, 80);
             this.output_label.Name = "output_label";
-            this.output_label.Size = new System.Drawing.Size(52, 19);
+            this.output_label.Size = new System.Drawing.Size(46, 18);
             this.output_label.TabIndex = 16;
             this.output_label.Text = "Output";
             // 
@@ -259,7 +260,7 @@ namespace CalculatorStackGUI
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(439, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 19);
+            this.label2.Size = new System.Drawing.Size(42, 18);
             this.label2.TabIndex = 18;
             this.label2.Text = "Stack";
             // 
@@ -288,6 +289,7 @@ namespace CalculatorStackGUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.inv);
             this.panel1.Controls.Add(this.quad);
             this.panel1.Controls.Add(this.konj);
             this.panel1.Controls.Add(this.real);
@@ -307,6 +309,28 @@ namespace CalculatorStackGUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(399, 234);
             this.panel1.TabIndex = 21;
+            // 
+            // quad
+            // 
+            this.quad.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quad.Location = new System.Drawing.Point(204, 130);
+            this.quad.Name = "quad";
+            this.quad.Size = new System.Drawing.Size(75, 29);
+            this.quad.TabIndex = 15;
+            this.quad.Text = "^2";
+            this.quad.UseVisualStyleBackColor = true;
+            this.quad.Click += new System.EventHandler(this.quad_Click);
+            // 
+            // konj
+            // 
+            this.konj.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.konj.Location = new System.Drawing.Point(297, 130);
+            this.konj.Name = "konj";
+            this.konj.Size = new System.Drawing.Size(75, 29);
+            this.konj.TabIndex = 16;
+            this.konj.Text = "Konj";
+            this.konj.UseVisualStyleBackColor = true;
+            this.konj.Click += new System.EventHandler(this.konj_Click);
             // 
             // panel2
             // 
@@ -333,7 +357,7 @@ namespace CalculatorStackGUI
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(18, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 19);
+            this.label3.Size = new System.Drawing.Size(57, 18);
             this.label3.TabIndex = 25;
             this.label3.Text = "Controls";
             // 
@@ -353,31 +377,20 @@ namespace CalculatorStackGUI
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(18, 433);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 19);
+            this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 27;
             this.label4.Text = "Message";
             // 
-            // quad
+            // inv
             // 
-            this.quad.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quad.Location = new System.Drawing.Point(204, 130);
-            this.quad.Name = "quad";
-            this.quad.Size = new System.Drawing.Size(75, 29);
-            this.quad.TabIndex = 15;
-            this.quad.Text = "^2";
-            this.quad.UseVisualStyleBackColor = true;
-            this.quad.Click += new System.EventHandler(this.quad_Click);
-            // 
-            // konj
-            // 
-            this.konj.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.konj.Location = new System.Drawing.Point(297, 130);
-            this.konj.Name = "konj";
-            this.konj.Size = new System.Drawing.Size(75, 29);
-            this.konj.TabIndex = 16;
-            this.konj.Text = "Konj";
-            this.konj.UseVisualStyleBackColor = true;
-            this.konj.Click += new System.EventHandler(this.konj_Click);
+            this.inv.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inv.Location = new System.Drawing.Point(18, 178);
+            this.inv.Name = "inv";
+            this.inv.Size = new System.Drawing.Size(75, 29);
+            this.inv.TabIndex = 17;
+            this.inv.Text = "Inv";
+            this.inv.UseVisualStyleBackColor = true;
+            this.inv.Click += new System.EventHandler(this.inv_Click);
             // 
             // Form1
             // 
@@ -440,6 +453,7 @@ namespace CalculatorStackGUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button quad;
         private System.Windows.Forms.Button konj;
+        private System.Windows.Forms.Button inv;
     }
 }
 

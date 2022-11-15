@@ -132,5 +132,19 @@ namespace CalculatorStackGUI
                 throw new CalculatorException();
             }
         }
+
+        public void inv()
+        {
+            if (TOS > -1)
+            {
+                Complex val = this.pop();
+                Complex inv = new Complex(val.Real * -1, val.Imaginary * -1);
+                this.push(inv);
+            }
+            else
+            {
+                throw new CalculatorException();
+            }
+        }
     }
 }

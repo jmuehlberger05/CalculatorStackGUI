@@ -210,5 +210,21 @@ namespace CalculatorStackGUI
             }
             refresh();
         }
+
+        private void inv_Click(object sender, EventArgs e)
+        {
+            error_msg.Visible = false;
+            try
+            {
+                opStack.inv();
+                output.Text = "" + opStack.InnerArray[opStack.len() - 1];
+            }
+            catch (Exception ex)
+            {
+                error_msg.Visible = true;
+                error_msg.Text = ex.Message;
+            }
+            refresh();
+        }
     }
 }
