@@ -40,17 +40,9 @@ namespace CalculatorStackGUI
             refresh();
         }
 
-        private void refresh ()
+        private void refresh()
         {
             this.listBox1.Items.Clear();
-            //foreach (Complex a in opStack.InnerArray)
-            //{
-            //    //if(a != 0) 
-            //    { 
-            //        listBox1.Items.Add(a.ToString()); 
-            //    }
-                
-            //}
             for (int i = 0; i < opStack.len(); i++)
             {
                 listBox1.Items.Add(opStack.InnerArray[i]);

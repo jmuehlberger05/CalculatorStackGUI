@@ -15,6 +15,7 @@ namespace CalculatorStackGUI
         {
             array = new Complex[this.max_element];
         }
+        
         public int len() { return TOS+1; }
 
         public Stack(int max)

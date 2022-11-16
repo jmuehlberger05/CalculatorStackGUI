@@ -11,6 +11,7 @@ namespace CalculatorStackGUI
         private int max_element = 100;
         //private Complex[] array;
 
+
         public CalculatorStack()
         {
             array = new Complex[this.max_element];
